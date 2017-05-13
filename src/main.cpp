@@ -24,8 +24,9 @@ const char * eventName = "";
 
 // board / pin / sleep specs
 const int LED_BUILTIN = 5;
-const int SOILSENSOR_PIN = 12;
+const int SOILSENSOR_PIN = 32;
 const uint64_t SLEEP_DUR = 1800000000; // 30min * 60s == 1800s
+// const uint64_t SLEEP_DUR = 30000000; // 30s for testing
 
 void setup()
 {
@@ -58,7 +59,7 @@ void connectToWiFi(const char * ssid, const char * pwd)
     {
         WiFi.begin(ssid, pwd);
         // Blink LED while we're connecting:
-        delay(500);
+        delay(5000);
         Serial.print(".");
     }
 
